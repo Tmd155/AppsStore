@@ -3,11 +3,11 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="bg-black text-white py-12 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
         {/* ORDER */}
-        <div>
-          <h3 className="font-bold mb-3">ORDER</h3>
-          <ul className="space-y-1 text-sm text-gray-300">
+        <div className="flex flex-col">
+          <h3 className="font-bold mb-3 text-2xl">ORDER</h3>
+          <ul className="space-y-1 text-xl text-gray-300">
             <li><a href="#">Return & Refund Policy</a></li>
             <li><a href="#">Cancellation/Order Change</a></li>
             <li><a href="#">DMCA</a></li>
@@ -15,9 +15,9 @@ export default function Footer() {
         </div>
 
         {/* RESOURCES */}
-        <div>
-          <h3 className="font-bold mb-3">RESOURCES</h3>
-          <ul className="space-y-1 text-sm text-gray-300">
+        <div className="flex flex-col">
+          <h3 className="font-bold mb-3 text-2xl">RESOURCES</h3>
+          <ul className="space-y-1 text-xl text-gray-300">
             <li><a href="#">Privacy Policy</a></li>
             <li><a href="#">Payment Methods</a></li>
             <li><a href="#">Terms of Services</a></li>
@@ -27,9 +27,9 @@ export default function Footer() {
         </div>
 
         {/* CUSTOMERS */}
-        <div>
-          <h3 className="font-bold mb-3">CUSTOMERS</h3>
-          <ul className="space-y-1 text-sm text-gray-300">
+        <div className="flex flex-col">
+          <h3 className="font-bold mb-3 text-2xl">CUSTOMERS</h3>
+          <ul className="space-y-1 text-xl text-gray-300">
             <li><a href="#">Case Studies</a></li>
             <li><a href="#">Store Examples</a></li>
           </ul>
@@ -52,7 +52,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="mt-10 border-t border-gray-700 pt-4 text-sm text-gray-400 flex flex-col md:flex-row justify-between items-center">
+      <div className="mt-10 border-t border-gray-700 pt-4 text-sm text-gray-400 flex flex-col md:flex-row justify-between items-center px-8">
         <div className="flex items-center gap-2 mb-3 md:mb-0">
           <Image src="/images/store_logo.png" alt="Logo" width={268} height={78} />
         </div>

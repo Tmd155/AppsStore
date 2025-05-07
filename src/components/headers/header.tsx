@@ -3,29 +3,29 @@ import Image from 'next/image';
 
 export default function Header() {
   return (
-    <header className="bg-black text-white flex items-center justify-between px-4 py-2 shadow-md">
+    <header className="bg-black text-white flex items-center justify-between px-8 py-2 shadow-md h-24">
       {/* Logo + Title */}
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center space-x-6 px-4">
         <Image src="/images/store_logo.png" alt="Logo" width={151} height={44} />
         {/* Menu items */}
         <nav className="flex items-center space-x-6 text-sm font-medium">
           <div className="flex items-center space-x-1">
-            <Smartphone size={16} />
+            <Smartphone size={20} />
             <span>Direct Top up</span>
           </div>
           <div className="flex items-center space-x-1">
-            <Ticket size={16} />
+            <Ticket size={20} />
             <span>Voucher</span>
           </div>
           <div className="flex items-center space-x-1">
-            <HelpCircle size={16} />
+            <HelpCircle size={20} />
             <span>Support</span>
           </div>
         </nav>
       </div>
 
       {/* Search + Login */}
-      <div className="flex items-center space-x-3">
+      <div className="flex items-center space-x-3 px-4">
         <div className="flex items-center bg-white rounded-md px-2 py-1">
           <input
             type="text"
@@ -35,7 +35,7 @@ export default function Header() {
           <Search size={18} className="text-black" />
         </div>
 
-        <button className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-md text-sm font-semibold">
+        <button className="bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-md text-sm font-semibold">
           Log in
         </button>
 

@@ -40,7 +40,9 @@ export default function DirectTopUpSection() {
         {/* Promo Badge */}
         <div className="flex justify-center mb-10">
           <span className="bg-red-600 text-white font-semibold px-4 py-2 rounded-lg text-sm shadow-md">
-            <span className="font-bold">+200%</span> &nbsp; Triple the value of the first purchase!
+            <div className="flex items-center">
+              <span className="font-bold text-black font-bold bg-[#FFFFFF] rounded-xl text-xs p-2 flex items-center">+200%</span> &nbsp; Triple the value of the first purchase!
+            </div>           
           </span>
         </div>
 
@@ -62,18 +64,21 @@ export default function DirectTopUpSection() {
               <h3 className="font-semibold text-lg mb-4">{item.name}</h3>
 
               <div className="w-full px-6">
-                <div className="flex justify-between items-center text-sm bg-[#3e2a2a] text-white rounded px-3 py-2 mb-3">
+                <div className="w-[228px] h-[44px] flex justify-between items-center text-sm bg-[#3e2a2a] text-white rounded px-3 py-2 mb-3">
                   <div className="flex items-center gap-1">
                     <Image src="/images/gem-icon.png" alt="Gem" width={16} height={16} />
                     <span>Gem</span>
                   </div>
                   <span>{item.amount}</span>
                 </div>
-
-                <div className="bg-red-600 rounded text-white text-sm font-semibold py-2 flex justify-between px-4 items-center">
-                  <span>{item.price}</span>
-                  <Image src="/images/globe-icon.png" alt="Buy" width={16} height={16} />
-                </div>
+                <div className="flex justify-between items-center pr-4">
+                  <div className="w-[176px] h-[44px] bg-red-600 rounded text-white text-sm font-semibold py-2 px-4 flex items-center">
+                    <span>{item.price}</span>
+                  </div>
+                  <div className="w-[44px] h-[44px] bg-red-600 rounded text-white text-sm font-semibold py-2 px-4 flex items-center">
+                    <Image src="/images/globe-icon.png" alt="Buy" width={20} height={20} />
+                  </div>
+                </div>               
               </div>
             </div>
           ))}

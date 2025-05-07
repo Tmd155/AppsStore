@@ -28,16 +28,18 @@ export default function VoucherSection() {
   return (
     <section
       className="w-full bg-cover bg-center py-16 text-white"
-      style={{ backgroundImage: "url('/images/green.png')" }}
+      style={{ backgroundImage: "url('/images/rock.png')" }}
     >
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
         {/* Title */}
         <h2 className="text-4xl font-extrabold text-center mb-6">Voucher</h2>
 
         {/* Promo badge */}
-        <div className="flex justify-center mb-10">
-          <span className="bg-red-600 text-white font-semibold px-4 py-2 rounded-lg text-sm shadow-md">
-            <span className="font-bold">+200%</span> &nbsp; Triple the value of the first purchase!
+        <div className="flex justify-center items-center mb-10">
+          <span className="bg-red-600 text-white font-semibold px-4 py-2 rounded-2xl text-sm shadow-md flex items-center">
+            <div className="flex items-center">
+            <span className="text-black font-bold bg-[#FFFFFF] rounded-xl text-xs p-2 flex items-center">+200%</span> &nbsp; Triple the value of the first purchase!
+            </div>
           </span>
         </div>
 
@@ -46,7 +48,7 @@ export default function VoucherSection() {
           {vouchers.map((v, idx) => (
             <div
               key={idx}
-              className="bg-[#2b0f0f] bg-opacity-90 rounded-2xl overflow-hidden border border-white/10 shadow-lg"
+              className="bg-[#2b0f0f] bg-opacity-90 rounded-2xl overflow-hidden border border-white/10 shadow-lg px-4 py-2"
             >
               <div className="relative w-full h-48">
                 <Image
@@ -57,11 +59,11 @@ export default function VoucherSection() {
                 />
               </div>
               <div className="p-4">
-                <h3 className="font-bold text-lg mb-1">{v.title}</h3>
-                <p className="text-gray-300 text-sm mb-4">{v.description}</p>
+                <h3 className="font-bold text-xl mb-1">{v.title}</h3>
+                <p className="text-gray-300 text-xl mb-4">{v.description}</p>
                 <div className="bg-red-600 text-white font-semibold px-4 py-2 rounded-md text-center text-sm">
-                  <span className="line-through mr-2 text-sm">{v.originalPrice}</span>
-                  <span>{v.salePrice}</span>
+                  <span className="line-through mr-2 text-base">{v.originalPrice}</span>
+                  <span className="mr-2 text-base">{v.salePrice}</span>
                 </div>
               </div>
             </div>

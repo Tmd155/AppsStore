@@ -6,17 +6,17 @@ export default function HeroSection() {
     <section
       className="w-full bg-cover bg-center py-12 text-white"
       style={{
-        backgroundImage: "url('/images/rock.png')", 
+        backgroundImage: "url('/images/green.png')", 
       }}
     >
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
           Welcome to <span className="text-white">Apps Store</span>
         </h1>
 
         <div className="bg-[#2b0f0f] bg-opacity-90 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between">
           {/* Left content */}
-          <div>
+          <div className="">
             <h2 className="text-3xl font-extrabold mb-2">Get +20% more!</h2>
             <p className="mb-4 text-gray-300">
               Offer extra discount to players on Web Shop purchases.
@@ -37,15 +37,20 @@ export default function HeroSection() {
           </div>
 
           {/* Right image */}
-          <div className="absolute mt-6 md:mt-0 w-[192px] h-[376px]">
-            <Image
-              src="/images/spell.png" 
-              alt="Promo Items"
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
+          
         </div>
+        
+      </div>
+      <div className="absolute right-100 top-40">
+          <Image
+            src="/images/spell.png" 
+            alt="Promo Items"
+            width={192}
+            height={376}
+            // layout="fill"
+            // objectFit="contain"
+            // className="w-full h-full"
+          />
       </div>
     </section>
   );

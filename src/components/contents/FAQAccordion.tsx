@@ -1,12 +1,13 @@
 "use client";
 import { useState } from "react";
-import { ChevronUpIcon } from "@heroicons/react/24/solid";
+// import { ChevronUpIcon } from "@heroicons/react/24/solid";
+import { Triangle } from "lucide-react";
 
 const faqData = [
   {
     question: "How does purchasing on Apps Store benefit your players?",
     answer:
-      "In Apps Store, players can purchase game items at lower prices, find some special offers, and claim free rewards. Moreover, there’s a variety of payment options available, allowing your players to choose the most convenient one for their purchases.",
+      "In Apps Store, players can purchase game items at lower prices, find some special offers, and claim free rewards. Moreover, there’s a variety of payment options available, allowing your players to choose the most convenient one for their purchases.",
   },
   {
     question: "Is it safe to purchase on Apps Store?",
@@ -20,15 +21,17 @@ const faqData = [
   },
   {
     question: "Who can help your players with purchase issues?",
-    answer: "Who can help your players with purchase issues?",
+    answer: "Who can help your players with purchase issues?",
   },
 ];
 
 export default function FAQAccordion() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number[]>([]);
 
   const toggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+    setOpenIndex((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
   };
 
   return (
@@ -36,7 +39,7 @@ export default function FAQAccordion() {
       className="w-full bg-cover bg-center py-16 text-white"
       style={{ backgroundImage: "url('/images/green.png')" }}
     >
-      <div className="py-12 px-4 text-white max-w-4xl mx-auto">
+      <div className="w-full max-w-7xl py-12 px-4 text-white max-w-4xl mx-auto">
         {faqData.map((item, index) => (
           <div
             key={index}
@@ -44,19 +47,19 @@ export default function FAQAccordion() {
           >
             <button
               onClick={() => toggle(index)}
-              className={`w-full flex justify-between items-center text-left text-lg font-semibold ${
-                openIndex === index ? "text-white" : "text-gray-300"
+              className={`w-full flex items-center text-left text-lg font-semibold ${
+                openIndex.includes(index) ? "text-white" : "text-gray-300"
               }`}
             >
-              <span>{item.question}</span>
-              <ChevronUpIcon
+              <Triangle
                 className={`w-5 h-5 transform transition-transform duration-300 ${
-                  openIndex === index ? "rotate-180" : "rotate-0"
+                  openIndex.includes(index) ? "rotate-180" : "rotate-0"
                 }`}
               />
+              <span className="text-2xl pl-8">{item.question}</span>
             </button>
-            {openIndex === index && (
-              <p className="mt-2 text-sm text-gray-300">{item.answer}</p>
+            {openIndex.includes(index) && (
+              <p className="mt-2 text-xl text-gray-300">{item.answer}</p>
             )}
           </div>
         ))}
